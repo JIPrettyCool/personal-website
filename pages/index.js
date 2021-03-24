@@ -37,11 +37,13 @@ export default function Home({ ü }) {
           <div>
           
             <img draggable="false" src={`https://cdn.discordapp.com/avatars/${ü.data.discord_user.id}/${ü.data.discord_user.avatar}.png`} className="h-40 mx-auto rounded-full"></img>
-            <div className="relative"><span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span></div>
+            <div className="relative">
             <h1 className="mt-3 text-2xl font-medium text-white">
-              {ü.data.discord_user.username}
+              {ü.data.discord_user.username} 
               
             </h1>
+            <span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span>
+            </div>
             <h1 className="text-xl text-white opacity-40 ">
               Meric
          </h1>
