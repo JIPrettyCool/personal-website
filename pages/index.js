@@ -3,6 +3,7 @@ import { faPlay, faPause, faVolumeUp, faVolumeDown } from '@fortawesome/free-sol
 import { } from "@fortawesome/free-regular-svg-icons"
 import { faDiscord, faTwitter, faInstagram, faGithub, faSpotify, faReddit } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link';
+import "../public/hiven.svg"
 /* import { useSound } from '../libs/usesound'; */
 import { Spotify } from "../components/spotify"
 export default function Home({ ü }) {
@@ -54,7 +55,7 @@ export default function Home({ ü }) {
               <Link href="https://twitter.com/iamrealji"><button className="text-3xl text-white"><FontAwesomeIcon icon={faTwitter} /></button></Link>
               <Link href="https://github.com/JIPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faGithub} /></button></Link>
               <Link href="https://open.spotify.com/user/u9w9q28510i4ah0b38izr83q0?si=KOx8i4MNSkWWG1eMdRaqSw"><button className="text-3xl text-white"><FontAwesomeIcon icon={faSpotify} /></button></Link>
-              <Link href="https://www.reddit.com/user/JIisPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faReddit} /></button></Link>
+              <Link href="https://app.hiven.io/@meric"><button className="text-3xl text-white"><img src="./hiven.svg" /></button></Link>
             </div>
           </div>
         </div>
