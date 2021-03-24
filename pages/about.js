@@ -35,8 +35,7 @@ export default function about({ ü }) {
                         <strong>{ü.data.discord_user?.username}</strong>
                         <a className="opacity-40">#{ü.data.discord_user.discriminator}</a>
                         <div className="flex flex-row mt-1 space-x-1">
-                            <img src="./hypesquadbadge.svg" className="h-6" />
-                            <img src="./devbadge.svg" className="h-6" />
+                           
                         </div>
                     </div>
 
