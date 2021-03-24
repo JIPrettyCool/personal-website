@@ -6,12 +6,29 @@ import "../public/hypesquadbadge.svg"
 import "../public/x.svg"
 export default function about({ ü }) {
 
+    function dcstatus() {
+        switch (ü.data.discord_status) {
+          case "online":
+            return "bg-white"
+            break;
+          case "offline":
+            return "bg-[#626c77]"
+            break;
+          case "idle":
+              return "bg-[#faa61a]"
+              break;
+          case "dnd":
+                return "bg-[#ef4444]"
+                break;      
+        }
+      }
+
     return (
         <div className="flex items-center min-h-screen bg-black ">
             <div className="flex flex-col mx-auto text-white border border-none rounded-lg 2xl:w-4/12 bg-spogreen">
                 <div className="flex flex-row p-4">
                     <div className="relative ">
-                        <span className="absolute bottom-0 right-0 p-2 align-bottom bg-white border-4 rounded-full border-spogreen"></span>
+                        <span className={`absolute bottom-0 right-0 p-2 align-bottom ${dcstatus()} border-4 rounded-full border-spogreen`}></span>
                         <img draggable="false" src={`https://cdn.discordapp.com/avatars/${ü.data.discord_user?.id}/${ü.data.discord_user?.avatar}.png`} className="h-20 mx-auto rounded-full"></img>
                     </div>
                     <div className="m-4">
@@ -69,7 +86,7 @@ export default function about({ ü }) {
                         </p>
                         <button className="flex-shrink-0 h-8 px-2 m-5 text-sm truncate border border-white rounded-sm w-52 focus:opacity-50 focus:outline-none" onClick={e => {
                             e.preventDefault(); window.open(
-                                `https://open.spotify.com/track/${ü.data?.track_id}`,
+                                `https://open.spotify.com/track/${ü.data.spotify?.track_id}`,
                                 "_blank"
                             )
 

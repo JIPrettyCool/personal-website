@@ -7,18 +7,44 @@ import Link from 'next/link';
 import { Spotify } from "../components/spotify"
 export default function Home({ ü }) {
 
+  function status() {
+    switch (ü.data.discord_status) {
+      case "online":
+        return "spogreen"
+        break;
+      case "offline":
+        return "[#626c77]"
+        break;
+      case "idle":
+          return "[#faa61a]"
+          break;
+      case "dnd":
+            return "[#ef4444]"
+            break;      
+    }
+  }
+
+
  /*  const [play, pause, volumeUp, volumeDown] = useSound() */
+ <head>
+   <title>Meric</title>
+ </head>
   return (
-    <div className="flex items-center justify-between min-h-screen bg-[#B8B3EA] ">
+    <div className="flex items-center justify-between min-h-screen from-[#739abb] to-[#80a0b6] bg-gradient-to-b w-full h-64">
+      
       <div className="flex items-stretch w-10/12 mx-auto">
-        <div className="flex flex-col justify-between p-10 text-center bg-[#7289da]  border border-spogreen rounded-2xl md:w-3/12">
+      
+        <div className="flex flex-col justify-between p-10 text-center bg-opacity-0 rounded-2xl md:w-3/12">
           <div>
+          <div className="relative"><span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} border-${status()} border-4 rounded-full `}></span></div>
             <img draggable="false" src={`https://cdn.discordapp.com/avatars/${ü.data.discord_user.id}/${ü.data.discord_user.avatar}.png`} className="h-40 mx-auto rounded-full"></img>
+            
             <h1 className="mt-3 text-2xl font-medium text-white">
               {ü.data.discord_user.username}
+              
             </h1>
-            <h1 className="text-xl text-white opacity-40">
-              Doing Something
+            <h1 className="text-xl text-white opacity-40 ">
+              Meric
          </h1>
           </div>
           <div>
@@ -32,7 +58,7 @@ export default function Home({ ü }) {
           </div>
         </div>
 
-        <div className="flex justify-center border border-spogreen bg-dcblue rounded-2xl md:w-10/12 text-white">
+        <div className="flex justify-center bg-opacity-0 rounded-2xl md:w-10/12 text-white">
         <div className="flex items-center">
                         <div className="flex-shrink-0 ">
 
