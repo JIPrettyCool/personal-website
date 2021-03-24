@@ -26,12 +26,11 @@ export default function Home({ ü }) {
 
 
  /*  const [play, pause, volumeUp, volumeDown] = useSound() */
- <head>
-   <title>Meric</title>
- </head>
   return (
     <div className="flex items-center justify-between min-h-screen from-[#739abb] to-[#80a0b6] bg-gradient-to-b w-full h-64">
-      
+      <title> 
+      Meric
+      </title>
       <div className="flex items-stretch w-10/12 mx-auto">
       
         <div className="flex flex-col justify-between p-10 text-center bg-opacity-0 rounded-2xl md:w-3/12">
