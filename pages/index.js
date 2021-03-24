@@ -3,7 +3,6 @@ import { faPlay, faPause, faVolumeUp, faVolumeDown } from '@fortawesome/free-sol
 import { } from "@fortawesome/free-regular-svg-icons"
 import { faDiscord, faTwitter, faInstagram, faGithub, faSpotify, faReddit } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link';
-import "../public/hiven.svg"
 /* import { useSound } from '../libs/usesound'; */
 import { Spotify } from "../components/spotify"
 export default function Home({ ü }) {
@@ -40,7 +39,7 @@ export default function Home({ ü }) {
             <img draggable="false" src={`https://cdn.discordapp.com/avatars/${ü.data.discord_user.id}/${ü.data.discord_user.avatar}.png`} className="h-40 mx-auto rounded-full"></img>
             <div className="relative">
             <h1 className="mt-3 text-2xl font-medium text-white">
-              {ü.data.discord_user.username} 
+              {ü.data.discord_user.username}
               
             </h1>
             <span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span>
@@ -55,7 +54,7 @@ export default function Home({ ü }) {
               <Link href="https://twitter.com/iamrealji"><button className="text-3xl text-white"><FontAwesomeIcon icon={faTwitter} /></button></Link>
               <Link href="https://github.com/JIPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faGithub} /></button></Link>
               <Link href="https://open.spotify.com/user/u9w9q28510i4ah0b38izr83q0?si=KOx8i4MNSkWWG1eMdRaqSw"><button className="text-3xl text-white"><FontAwesomeIcon icon={faSpotify} /></button></Link>
-              <img src="./hiven.svg"><a href="https://app.hiven.io/@meric"><button className="text-3xl text-white"><img src="./hiven.svg" /></button></a></img>
+              <Link href="https://www.reddit.com/user/JIisPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faReddit} /></button></Link>
             </div>
           </div>
         </div>
