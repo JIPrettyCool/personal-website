@@ -42,7 +42,7 @@ export default function Home({ ü }) {
               {ü.data.discord_user.username}
               
             </h1>
-            <span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span>
+            <span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} border-2 rounded-full border-dcdarkgray `}></span>
             </div>
             <h1 className="text-xl text-white opacity-40 ">
               Meric
@@ -55,6 +55,11 @@ export default function Home({ ü }) {
               <Link href="https://github.com/JIPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faGithub} /></button></Link>
               <Link href="https://open.spotify.com/user/u9w9q28510i4ah0b38izr83q0?si=KOx8i4MNSkWWG1eMdRaqSw"><button className="text-3xl text-white"><FontAwesomeIcon icon={faSpotify} /></button></Link>
               <Link href="https://www.reddit.com/user/JIisPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faReddit} /></button></Link>
+              <a href="https://app.hiven.io/@meric">
+              <button className="text-white">
+              <img draggable="false" src="https://hiven.io/static/media/logo.f7ff647e.svg" className="h-7 rounded-md"></img>
+              </button>
+              </a>
             </div>
           </div>
         </div>

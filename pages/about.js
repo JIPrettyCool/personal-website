@@ -115,12 +115,12 @@ export default function about({ ü }) {
 
 export async function getServerSideProps(ctx) {
     const ğ = await fetch("https://meric.vercel.app/api/status")
-
-
+  
+  
     const ü = await ğ.json()
-
-
+  
+  
     return {
         props: { ü }
     }
-}
+  }
