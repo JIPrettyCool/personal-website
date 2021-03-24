@@ -35,9 +35,9 @@ export default function Home({ ü }) {
       
         <div className="flex flex-col justify-between p-10 text-center bg-opacity-0 rounded-2xl md:w-3/12">
           <div>
-          <div className="relative"><span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span></div>
+          
             <img draggable="false" src={`https://cdn.discordapp.com/avatars/${ü.data.discord_user.id}/${ü.data.discord_user.avatar}.png`} className="h-40 mx-auto rounded-full"></img>
-            
+            <div className="relative"><span className={`absolute bottom-0 right-0 p-2 align-bottom bg-${status()} rounded-full `}></span></div>
             <h1 className="mt-3 text-2xl font-medium text-white">
               {ü.data.discord_user.username}
               
