@@ -56,9 +56,6 @@ export default function Home({ ü }) {
               <Link href="https://open.spotify.com/user/u9w9q28510i4ah0b38izr83q0?si=KOx8i4MNSkWWG1eMdRaqSw"><button className="text-3xl text-white"><FontAwesomeIcon icon={faSpotify} /></button></Link>
               <Link href="https://www.reddit.com/user/JIisPrettyCool"><button className="text-3xl text-white"><FontAwesomeIcon icon={faReddit} /></button></Link>
               <a href="https://app.hiven.io/@meric">
-              <button className="text-white">
-              <img draggable="false" src="https://hiven.io/static/media/logo.f7ff647e.svg" className="h-7 rounded-md"></img>
-              </button>
               </a>
             </div>
           </div>
