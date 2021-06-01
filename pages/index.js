@@ -29,7 +29,7 @@ export default function Home({ ü }) {
   return (
     <div className="flex items-center justify-between min-h-screen from-[#739abb] to-[#80a0b6] bg-gradient-to-b w-full h-64">
       <title> 
-      Meric
+      Meric - Open Source
       </title>
       <div className="flex items-stretch w-10/12 mx-auto">
       
