@@ -1,0 +1,17 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"version": 2,
+	"alias": "meric",
+	"cleanUrls": true,
+	"public": true,
+	"regions": ["tr"],
+	"redirects": [
+		{ "source": "/github", "destination": "https://github.com/jiprettycool" },
+		{ "source": "/portfolio", "destination": "/projects" },
+		{ "source": "/twitter", "destination": "https://twitter.com/iamrealji" },
+		{
+			"source": "/contact",
+			"destination": "https://twitter.com/direct_messages/create/iamrealji"
+		}
+	]
+}
