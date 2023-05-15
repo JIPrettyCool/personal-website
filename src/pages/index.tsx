@@ -41,7 +41,7 @@ export default function IndexP(): JSX.Element {
 						}}>
 						Hey <span className="text-gray-500 dark:text-white tracking-tight font-extrabold inline-block origin-70 hover:(animate-wave)">👋</span>
 						<br />
-						It's Meriç
+						It&apos;s Meriç
 					</Animate>
 					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">
 						{ACTIONS.map((action, index) => {
