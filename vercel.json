@@ -4,7 +4,7 @@
 	"alias": "meric",
 	"cleanUrls": true,
 	"public": true,
-	"regions": ["tr"],
+	"regions": ["lhr1"],
 	"redirects": [
 		{ "source": "/github", "destination": "https://github.com/jiprettycool" },
 		{ "source": "/portfolio", "destination": "/projects" },
