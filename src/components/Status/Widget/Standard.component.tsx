@@ -166,9 +166,7 @@ export function Widget(): JSX.Element {
 										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
 											{activity.title}
 										</h1>
-										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
-											{activity.description}
-										</p>
+
 									</>
 								)}
 							</div>
