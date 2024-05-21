@@ -17,16 +17,16 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18",
     "@vite-pwa/nuxt": "^0.1.0",
-    "nuxt": "^3.6.0",
+    "nuxt": "^3.11.2",
     "typescript": "latest"
   },
   "dependencies": {
-    "vue": "^2.7.16",
     "@animxyz/vue": "^0.6.7",
     "@leonardssh/use-lanyard": "^1.0.4",
     "@pinia/nuxt": "^0.4.11",
     "floating-vue": "^2.0.0-beta.22",
     "nuxt-icon": "^0.4.1",
-    "pinia": "^2.1.4"
-  }  
+    "pinia": "^2.1.4",
+    "vue": "^3.4.27"
+  }
 }
