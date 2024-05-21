@@ -1,45 +1,45 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
-	mode: 'jit',
-	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-	darkMode: 'class',
-	theme: {
-		extend: {
-			backgroundOpacity: {
-				15: '0.15',
-			},
-			colors: {
-				gray: {
-					50: '#fbcdf1',
-					100: '#fbcdf1',
-					200: '#fbcdf1',
-					300: '#fbcdf1',
-					400: '#fbcdf1',
-					500: '#fbcdf1',
-					600: '#fbcdf1',
-					700: '#fbcdf1',
-					800: '#fbcdf1',
-					900: '#fbcdf1',
-				},
-				primary: {
-					50: '#fbcdf1',
-					100: '#fbcdf1',
-					200: '#fbcdf1',
-					300: '#fbcdf1',
-					400: '#fbcdf1',
-					500: '#fbcdf1',
-					600: '#fbcdf1',
-					700: '#fbcdf1',
-					800: '#fbcdf1',
-					900: '#fbcdf1',
-				},
-			},
-			fontFamily: {
-				inter: ['Inter', ...defaultTheme.fontFamily.sans],
-			},
-		},
-	},
-	variants: {},
-	plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/typography')],
+  darkMode: "class",
+  content: [
+    `components/**/*.{vue,js}`,
+    `layouts/**/*.vue`,
+    `pages/**/*.vue`,
+    `composables/**/*.{js,ts}`,
+    `plugins/**/*.{js,ts}`,
+    `App.{js,ts,vue}`,
+    `app.{js,ts,vue}`,
+  ],
+  theme: {
+    extend: {
+      keyframes: {
+        wavey: {
+          "0%": { transform: "rotate(0.0deg)" },
+          "15%": { transform: "rotate(14.0deg)" },
+          "30%": { transform: "rotate(-8.0deg)" },
+          "40%": { transform: "rotate(14.0deg)" },
+          "50%": { transform: "rotate(-4.0deg)" },
+          "60%": { transform: "rotate(10.0deg)" },
+          "70%": { transform: "rotate(0.0deg)" },
+          "100%": { transform: "rotate(0.0deg)" },
+        },
+        skeleton: {
+          "0%": {
+            opacity: 0.1,
+            transform: " translateX(-300%)",
+          },
+          "50%": {
+            opacity: 1,
+          },
+          "100%": {
+            opacity: 0.1,
+            transform: " translateX(300%)",
+          },
+        },
+      },
+      animation: {
+        wavey: "wavey 1.5s infinite",
+        skeleton: "skeleton 2s infinite",
+      },
+    },
+  },
 };
