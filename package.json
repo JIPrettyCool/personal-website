@@ -21,11 +21,12 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@animxyz/vue": "^0.6.7",
+    "@animxyz/vue": "^2.0.0",
     "@leonardssh/use-lanyard": "^1.0.4",
     "@pinia/nuxt": "^0.4.11",
     "floating-vue": "^3.2.0",
     "nuxt-icon": "^0.4.1",
-    "pinia": "^2.1.4"
+    "pinia": "^2.1.4",
+    "vue": "^3.2.0"
   }
 }
