@@ -21,7 +21,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "vue": "^3.2.0",
+    "vue": "^2.7.16",
     "@animxyz/vue": "^0.6.7",
     "@leonardssh/use-lanyard": "^1.0.4",
     "@pinia/nuxt": "^0.4.11",
