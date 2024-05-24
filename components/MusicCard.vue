@@ -15,7 +15,10 @@
 
   <div v-else>
     <div class="flex items-center my-4 md:hidden">
-      <icon name="mdi:spotify" class="text-[#3ba55d] h-7 w-7 md:hidden mr-1" />
+      <icon
+        name="cib:apple-music"
+        class="text-[#ffffff] h-7 w-7 md:hidden mr-1"
+      />
       <div class="text-xs">
         <span class="font-semibold"> {{ getStatus.song }} </span>
         <span class="font-thin">&nbsp;by&nbsp;</span>
@@ -36,8 +39,8 @@
                   class="h-full rounded-md xyz-in"
                   draggable="false"
                   :loading="getLoading"
-                  :src="store?.lanyardData?.spotify?.album_art_url"
-                  :key="store?.lanyardData?.spotify?.album_art_url"
+                  :src="thumbnailImage"
+                  :key="thumbnailImage"
                   xyz="fade"
                 />
               </div>
@@ -50,14 +53,7 @@
                 class="flex my-2 space-x-4 space-y-1 overflow-hidden md:flex-col md:my-0 md:space-x-0 w-72"
               >
                 <div class="truncate xyz-in" xyz="fade" :key="getStatus.song">
-                  <Link
-                    :href="`https://open.spotify.com/track/${getStatus?.trackId}`"
-                    target="_blank"
-                    v-tooltip="'Join me!'"
-                    class="font-medium hover:underline md:truncate"
-                  >
-                    {{ getStatus.song }}
-                  </Link>
+                  {{ getStatus.song }}
                 </div>
 
                 <span class="truncate">
@@ -95,8 +91,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import Link from "@/components/link.vue";
 import { useLanyardStore } from "@/store/index";
+import { Activity } from "@leonardssh/use-lanyard";
 
 const store = useLanyardStore();
 
@@ -106,26 +102,37 @@ const getLoading = computed(
   () => Object.keys(store?.lanyardData || {}).length === 0
 );
 
+let thumbnailImage: string;
+let activity: Activity | undefined;
+
 const getStatus = computed(() => {
+  activity = store?.lanyardData?.activities?.find(
+    (activity) => activity.name === "Apple Music"
+  );
+
+  thumbnailImage = (
+    activity?.assets?.large_image.startsWith("mp:external")
+      ? activity.assets.large_image.replace(
+          /mp:external\/([^\/]*)\/(http[s])/g,
+          "$2:/"
+        )
+      : `https://cdn.discordapp.com/app-assets/${activity?.application_id}/${activity?.assets?.large_image}`
+  ).replace("96x96", "1024x1024");
+
   return {
     statusIndicator: store?.lanyardData?.discord_status || "Offline",
-    song: store?.lanyardData?.spotify?.song,
-    artist: store?.lanyardData?.spotify?.artist,
-    album: store?.lanyardData?.spotify?.album,
-    albumurl: store?.lanyardData?.spotify?.album_art_url,
-    trackId: store?.lanyardData?.spotify?.track_id,
+    song: activity?.details,
+    artist: activity?.state,
+    album: activity?.assets?.large_text,
+    albumurl: thumbnailImage,
   };
 });
 
 const progress = computed(() => {
-  if (store?.lanyardData?.spotify?.timestamps.end) {
-    const total =
-      store?.lanyardData?.spotify?.timestamps?.end -
-      store?.lanyardData?.spotify?.timestamps?.start;
+  if (activity?.timestamps?.end) {
+    const total = activity?.timestamps?.end - activity?.timestamps?.start;
     const progress =
-      100 -
-      (100 * (store?.lanyardData?.spotify?.timestamps.end - time.value)) /
-        total;
+      100 - (100 * (activity?.timestamps?.end - time.value)) / total;
 
     return progress;
   }

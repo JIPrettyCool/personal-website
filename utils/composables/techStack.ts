@@ -2,13 +2,13 @@ export const techStack = [
   {
     icon: "vscode-icons:file-type-python",
     color: "#3974a5",
-    name: "⚽",
+    name: "⚽ TBFootball",
     url: "https://github.com/JIPrettyCool/text-based-football",
   },
   {
     icon: "vscode-icons:file-type-python",
     color: "#3974a5",
-    name: "🔥",
+    name: "🔥CS:GO Hack",
     url: "https://github.com/JIPrettyCool/hammer-csgo-hack",
   },
   {

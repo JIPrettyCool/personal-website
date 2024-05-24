@@ -5,10 +5,10 @@
     <div
       class="h-[2000px] blur-[100px] w-[200%] xyz-in absolute bg-contain"
       xyz="fade"
-      :key="store?.lanyardData.spotify?.album_art_url"
+      :key="getInfo.thumbnailImage"
       :style="
         colorMode.value == 'dark'
-          ? `background-image: url('${store?.lanyardData.spotify?.album_art_url}'); opacity: 40%; animation-name: spin; animation-iteration-count: infinite; animation-duration: 85s; animation-timing-function: linear;`
+          ? `background-image: url('${getInfo.thumbnailImage}'); opacity: 40%; animation-name: spin; animation-iteration-count: infinite; animation-duration: 85s; animation-timing-function: linear;`
           : ''
       "
     />
@@ -36,7 +36,7 @@
             <v-image
               class="relative rounded-xl h-28 w-28 md:h-48 md:w-48"
               :loading="getLoading"
-              :src="`https://cdn.discordapp.com/avatars/${getInfo.userId}/${getInfo.userAvatar}.png?size=1024`"
+              :src="getInfo.userAvatar"
               draggable="false"
               alt="avatar"
             />
@@ -60,7 +60,6 @@
                 class="self-center h-7 w-7 md:h-10 md:w-10 animate-wavey rotate-90"
               />
             </h1>
-
             <p
               class="w-full md:w-7/12 text-md opacity-80 md:text-lg xyz-in"
               xyz="fade left-4"
@@ -68,34 +67,19 @@
               {{ new Date().getUTCFullYear() - 2005 }} years old Pilot,
               studying in National Defence University.
             </p>
-
-            <p class="mt-4 md:text-xl xyz-in" xyz="fade left-4">Github</p>
-            <div class="flex mt-1 space-x-3 text-xl xyz-in">
-              <Link
-                v-for="(item, index) in socials"
-                :key="index"
-                :href="item.url"
-                :aria-label="item.name"
-              >
-                <Icon
-                  :name="item.icon"
-                  class="w-8 h-8 transition duration-75 rounded-md dark:hover:text-gray-300 hover:text-gray-500 xyz-in"
-                  :xyz="`fade down-${Number(index) + 1} delay-${
-                    Number(index) + 1
-                  }`"
-                />
-              </Link>
-            </div>
           </div>
         </div>
-        <div class="flex flex-col w-10/12 md:w-4/12">
+        <div class="flex flex-col w-10/12 md:w-4/12 gap-2">
           <MusicCard class="block" />
 
           <span class="mt-6 mb-2 md:text-3xl xyz-in" xyz="fade left-4">
             Projects
           </span>
-
-          <Skills class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
+        
+          <GitHubLink class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
+          <div id="app">
+            <LinksCard />
+          </div>
         </div>
       </div>
     </div>
@@ -103,10 +87,10 @@
 </template>
 
 <script setup lang="ts">
-import Link from "@/components/link.vue";
-import { useLanyard } from "@leonardssh/use-lanyard";
+import { Activity, useLanyard } from "@leonardssh/use-lanyard";
 import { useLanyardStore } from "@/store";
-import { socials } from "@/utils/composables/socials";
+import GitHubLink from "./components/GitHubLink.vue";
+import LinksCard from "./components/LinksCard.vue";
 
 let store = useLanyardStore();
 const colorMode = useColorMode();
@@ -127,13 +111,27 @@ const getLoading = computed(
   () => Object.keys(store?.lanyardData || {}).length === 0
 );
 
-const spotifyLoading = computed(() => store?.lanyardData?.spotify === null);
+let appleMusic: Activity | undefined;
 
-const getInfo = computed(() => ({
-  statusIndicator: store?.lanyardData?.discord_status || "Offline",
-  userId: store?.lanyardData?.discord_user?.id,
-  userAvatar: store?.lanyardData?.discord_user?.avatar,
-}));
+const appleMusicLoading = computed(() => !!appleMusic);
+
+const getInfo = computed(() => {
+  appleMusic = store?.lanyardData.activities?.find(
+    (activity) => activity.name === "Apple Music"
+  );
+
+  return {
+    statusIndicator: store?.lanyardData?.discord_status || "Offline",
+    userAvatar: `https://cdn.discordapp.com/avatars/${store?.lanyardData?.discord_user?.id}/${store?.lanyardData?.discord_user?.avatar}.png?size=1024`,
+    thumbnailImage: (appleMusic?.assets?.large_image.startsWith("mp:external")
+      ? appleMusic.assets.large_image.replace(
+          /mp:external\/([^\/]*)\/(http[s])/g,
+          "$2:/"
+        )
+      : `https://cdn.discordapp.com/app-assets/${appleMusic?.application_id}/${appleMusic?.assets?.large_image}`
+    ).replace("96x96", "1024x1024"),
+  };
+});
 
 useHead({
   htmlAttrs: {
