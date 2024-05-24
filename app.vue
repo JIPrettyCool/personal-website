@@ -73,7 +73,7 @@
           <MusicCard class="block" />
 
           <span class="mt-6 mb-2 md:text-3xl xyz-in" xyz="fade left-4">
-            Projects
+            Links
           </span>
         
           <GitHubLink class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
