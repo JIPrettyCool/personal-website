@@ -33,7 +33,6 @@
       </span>
       <span class="space-y-0.5 px-6 pb-6">
         <span class="block font-semibold">GitHub</span>
-        <span class="block text-sm">My projects</span>
       </span>
     </a>
   </template>
@@ -42,7 +41,7 @@
   export default {
     data() {
       return {
-        imgSrc: 'https://http.cat/images/500.jpg' // Update the path as necessary
+        imgSrc: 'https://http.cat/images/500.jpg' 
       }
     }
   }
@@ -50,7 +49,7 @@
   
   <style scoped>
   a {
-    /* Add any additional styling here if needed */
+    
   }
   </style>
   
