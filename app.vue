@@ -64,8 +64,7 @@
               class="w-full md:w-7/12 text-md opacity-80 md:text-lg xyz-in"
               xyz="fade left-4"
             >
-              {{ new Date().getUTCFullYear() - 2005 }} years old Pilot,
-              studying at the National Defence University.
+              {{ new Date().getUTCFullYear() - 2005 }} years old Pilot.
             </p>
           </div>
         </div>
@@ -147,7 +146,7 @@ useHead({
       name: "description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot, studying at the National Defence University.`,
+      } years old Pilot.`,
     },
     { name: "theme-color", content: "#000000" },
     { property: "og:title", content: "meric." },
@@ -157,7 +156,7 @@ useHead({
       property: "og:description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot, studying at the National Defence University.`,
+      } years old Pilot.`,
     },
     {
       property: "og:image",
@@ -176,7 +175,7 @@ useHead({
       name: "twitter:description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot, studying at the National Defence University.`,
+      } years old Pilot.`,
     },
     {
       name: "twitter:image",
