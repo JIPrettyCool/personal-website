@@ -63,7 +63,7 @@
               class="w-full md:w-7/12 text-md opacity-80 md:text-lg xyz-in"
               xyz="fade left-4"
             >
-              {{ new Date().getUTCFullYear() - 2005 }} years old Pilot.
+              {{ new Date().getUTCFullYear() - 2005 }} years old Freelance Dev.
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ useHead({
       name: "description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot.`,
+      } years old Freelance Developer.`,
     },
     { name: "theme-color", content: "#000000" },
     { property: "og:title", content: "meric." },
@@ -151,7 +151,7 @@ useHead({
       property: "og:description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot.`,
+      } years old Freelance Developer.`,
     },
     {
       property: "og:image",
@@ -170,7 +170,7 @@ useHead({
       name: "twitter:description",
       content: `${
         new Date().getFullYear() - 2005
-      } years old Pilot.`,
+      } years old Freelance Developer.`,
     },
     {
       name: "twitter:image",
