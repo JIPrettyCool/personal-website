@@ -8,6 +8,7 @@ module.exports = {
     `plugins/**/*.{js,ts}`,
     `App.{js,ts,vue}`,
     `app.{js,ts,vue}`,
+    `music.{js,ts,vue}`,
   ],
   theme: {
     extend: {

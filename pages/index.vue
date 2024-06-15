@@ -31,7 +31,7 @@
       <div
         class="flex flex-col items-center justify-between w-full pt-24 sm:flex-row md:pt-0 md:mt-48"
       >
-        <div class="flex flex-col mx-8 md:mx-0 md:space-y-3 md:w-7/12">
+        <div class="flex flex-col mx-4 md:mx-0 md:space-y-3 md:w-/12">
           <div class="relative">
             <v-image
               class="relative rounded-xl h-28 w-28 md:h-48 md:w-48"
@@ -51,7 +51,6 @@
               }"
             />
           </div>
-
           <div>
             <h1 class="flex my-2 text-3xl md:text-5xl xyz-in" xyz="fade left-2">
               Welcome&nbsp;
@@ -74,12 +73,9 @@
           <span class="mt-6 mb-2 md:text-3xl xyz-in" xyz="fade left-4">
             Links
           </span>
-        
-          <GitHubLink class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
-          <div id="app">
-            <LinksCard />
+          <div id="index">
+            <LinksCard class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
           </div>
-          <Upwork />
         </div>
       </div>
     </div>
@@ -90,9 +86,7 @@
 import { defineComponent } from 'vue';
 import { Activity, useLanyard } from "@leonardssh/use-lanyard";
 import { useLanyardStore } from "@/store";
-import GitHubLink from "./components/GitHubLink.vue";
-import LinksCard from "./components/LinksCard.vue";
-import GradualSpacing from './components/GradualSpacing.vue';
+import LinksCard from "../components/LinksCard.vue";
 
 let store = useLanyardStore();
 const colorMode = useColorMode();
