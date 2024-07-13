@@ -177,5 +177,13 @@ useHead({
       content: `https://cdn.discordapp.com/avatars/${getInfo?.value?.userId}/${getInfo?.value?.userAvatar}.png?size=1024`,
     },
   ],
+  script: [
+    {
+      src: "https://analytics.merickmrc.com/script.js",
+      async: true,
+      defer: true,
+      'data-website-id': "249ffff8-d995-42a4-88bb-506f8c2c1410"
+    }
+  ]
 });
 </script>
