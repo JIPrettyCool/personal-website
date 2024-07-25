@@ -5,10 +5,10 @@
     <div
       class="h-[2000px] blur-[100px] w-[200%] xyz-in absolute bg-contain"
       xyz="fade"
-      :key="getInfo.thumbnailImage"
+      :key="store?.lanyardData.spotify?.album_art_url"
       :style="
         colorMode.value == 'dark'
-          ? `background-image: url('${getInfo.thumbnailImage}'); opacity: 40%; animation-name: spin; animation-iteration-count: infinite; animation-duration: 85s; animation-timing-function: linear;`
+          ? `background-image: url('${store?.lanyardData.spotify?.album_art_url}'); opacity: 40%; animation-name: spin; animation-iteration-count: infinite; animation-duration: 85s; animation-timing-function: linear;`
           : ''
       "
     />
@@ -36,7 +36,7 @@
             <v-image
               class="relative rounded-xl h-28 w-28 md:h-48 md:w-48"
               :loading="getLoading"
-              :src="getInfo.userAvatar"
+              :src="`https://cdn.discordapp.com/avatars/${getInfo.userId}/${getInfo.userAvatar}.png?size=1024`"
               draggable="false"
               alt="avatar"
             />
@@ -107,27 +107,15 @@ const getLoading = computed(
   () => Object.keys(store?.lanyardData || {}).length === 0
 );
 
-let appleMusic: Activity | undefined;
+const spotifyLoading = computed(() => store?.lanyardData?.spotify === null);
 
 const appleMusicLoading = computed(() => !!appleMusic);
 
-const getInfo = computed(() => {
-  appleMusic = store?.lanyardData.activities?.find(
-    (activity) => activity.name === "Apple Music"
-  );
-
-  return {
-    statusIndicator: store?.lanyardData?.discord_status || "Offline",
-    userAvatar: `https://cdn.discordapp.com/avatars/${store?.lanyardData?.discord_user?.id}/${store?.lanyardData?.discord_user?.avatar}.png?size=1024`,
-    thumbnailImage: (appleMusic?.assets?.large_image.startsWith("mp:external")
-      ? appleMusic.assets.large_image.replace(
-          /mp:external\/([^\/]*)\/(http[s])/g,
-          "$2:/"
-        )
-      : `https://cdn.discordapp.com/app-assets/${appleMusic?.application_id}/${appleMusic?.assets?.large_image}`
-    ).replace("96x96", "1024x1024"),
-  };
-});
+const getInfo = computed(() => ({
+  statusIndicator: store?.lanyardData?.discord_status || "Offline",
+  userId: store?.lanyardData?.discord_user?.id,
+  userAvatar: store?.lanyardData?.discord_user?.avatar,
+}));
 
 useHead({
   htmlAttrs: {
