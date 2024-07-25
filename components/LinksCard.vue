@@ -73,13 +73,13 @@
     </p>
     </a>
     <a
-      href="/music"
+      href="https://open.spotify.com/user/u9w9q28510i4ah0b38izr83q0?si=d77a6a73d6d74547"
       target="_blank"
-      class="hover:scale-95 duration-500 transform-gpu h-[12rem] flex flex-col justify-center items-center rounded-lg text-white bg-gradient-to-b from-[#fb5b73] to-[#fa243c] w-full"
+      class="hover:scale-95 duration-500 transform-gpu h-[12rem] flex flex-col justify-center items-center rounded-lg text-white bg-gradient-to-b from-[#1ed760] to-[#fa243c] w-full"
     >
-    <Icon name="cib:apple-music" class="self-center mx-2 w-6 h-6 md:w-auto xl:flex-shrink-0"></Icon>  
+    <Icon name="mdi:spotify" class="self-center mx-2 w-6 h-6 md:w-auto xl:flex-shrink-0"></Icon>  
     <p class="text-[12px] text-white">
-    Apple Music   
+    Spotify   
     </p>
     </a>
   </div>
