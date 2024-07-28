@@ -70,9 +70,6 @@
         <div class="flex flex-col w-10/12 md:w-4/12 gap-2">
           <MusicCard class="block" />
 
-          <span class="mt-6 mb-2 md:text-3xl xyz-in" xyz="fade left-4">
-            Links
-          </span>
           <div id="index">
             <LinksCard class="flex-shrink-0" :spotifyStatus="spotifyLoading" />
           </div>
