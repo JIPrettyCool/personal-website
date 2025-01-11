@@ -51,7 +51,7 @@
               }"
             />
           </div>
-          <div>
+          <div class="software-developer">
             <h1 class="flex my-2 text-3xl md:text-5xl xyz-in" xyz="fade left-2">
               Welcome&nbsp;
               <Icon
@@ -65,7 +65,6 @@
             >
               {{ new Date().getUTCFullYear() - 2005 }} years old Software Developer.
             </p>
-          </div>
         </div>
         <div class="flex flex-col w-10/12 md:w-4/12 gap-2">
           <MusicCard class="block" />
@@ -172,3 +171,9 @@ useHead({
   ]
 });
 </script>
+
+<style scoped>
+.software-developer {
+  display: inline;
+}
+</style>
