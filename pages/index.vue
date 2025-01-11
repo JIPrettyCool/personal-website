@@ -62,9 +62,9 @@
               </h1>
               <p
                 class="w-full md:w-7/12 text-md opacity-80 md:text-lg xyz-in"
-                xyz="fade left-4 software-developer"
+                xyz="fade left-4"
               >
-                {{ new Date().getUTCFullYear() - 2005 }} years old Software Developer.
+                {{ formattedText }}
               </p>
           </div>
           <div class="flex flex-col w-10/12 md:w-4/12 gap-2">
@@ -172,9 +172,14 @@
     ]
   });
   </script>
-  
-  <style scoped>
-  .software-developer {
-    display: inline;
+
+  <script>
+  export default {
+    computed: {
+      formattedText() {
+        const age = new Date().getUTCFullYear() - 2005;
+        return `${age} Years old Software Developer.`;
+      }
+    }
   }
-  </style>
+  </script>
