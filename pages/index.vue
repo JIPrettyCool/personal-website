@@ -52,7 +52,7 @@
               />
               </div>
             </div>
-            <div class="software-developer">
+            <div>
               <h1 class="flex my-2 text-3xl md:text-5xl xyz-in" xyz="fade left-2">
                 Welcome&nbsp;
                 <Icon
@@ -62,7 +62,7 @@
               </h1>
               <p
                 class="w-full md:w-7/12 text-md opacity-80 md:text-lg xyz-in"
-                xyz="fade left-4"
+                xyz="fade left-4 software-developer"
               >
                 {{ new Date().getUTCFullYear() - 2005 }} years old Software Developer.
               </p>
@@ -142,6 +142,7 @@
         property: "og:image",
         content: `https://cdn.discordapp.com/avatars/${getInfo?.value?.userId}/${getInfo?.value?.userAvatar}.png?size=1024`,
       },
+      //
       {
         name: "twitter:card",
         content: "summary_large_image",
