@@ -113,6 +113,14 @@
     userId: store?.lanyardData?.discord_user?.id,
     userAvatar: store?.lanyardData?.discord_user?.avatar,
   }));
+  export default {
+    computed: {
+      formattedText() {
+        const age = new Date().getUTCFullYear() - 2005;
+        return `${age} Years old Software Developer.`;
+      }
+    }
+  }
   
   useHead({
     htmlAttrs: {
@@ -142,7 +150,6 @@
         property: "og:image",
         content: `https://cdn.discordapp.com/avatars/${getInfo?.value?.userId}/${getInfo?.value?.userAvatar}.png?size=1024`,
       },
-      //
       {
         name: "twitter:card",
         content: "summary_large_image",
@@ -170,16 +177,5 @@
         'data-website-id': "249ffff8-d995-42a4-88bb-506f8c2c1410"
       }
     ]
-  });
-  </script>
-
-  <script>
-  export default {
-    computed: {
-      formattedText() {
-        const age = new Date().getUTCFullYear() - 2005;
-        return `${age} Years old Software Developer.`;
-      }
-    }
-  }
+  }); 
   </script>
